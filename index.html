@@ -1,20 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Header -->
+
 <head>
- <title>Tycoon</title>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <title>Tycoon</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./style/style.css">
 </head>
+
+
+<!-- body -->
 <body>
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+    <a class="navbar-brand" href="#">AT</a>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" id="purchase">Purchase</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="hanger">Hanger</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Flights</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Main Side Container (menu) -->
+  <div class="container" id="maincontainer">
+    <div class="row">
 
-<div class="container">
- <h1>My First Bootstrap</h1>
- <p>This is some text.</p>
-</div>
-
+      <!-- Purchase Div -->
+      <div class="col" id="purchaseDiv">
+        <h2>Purchase</h2>
+        <ul>
+          <img src="./img/Boeing.png" id="boeingImg" />
+          <li class="list-item 787" id="planelist">Boeing 787-9</li>
+          <li class="list-item 747-8" id="planelist">Boeing 747-8</li>
+          <li class="list-item 777X" id="planelist">Boeing 777X</li>
+          <li class="list-item 767" id="planelist">Boeing 767</li>
+          <li class="list-item 737-900" id="planelist">Boeing 737-900</li>
+        </ul>
+      </div>
+      <!-- Hanger Div -- >
+      <div class="col" id="hangerDiv">
+        <div>
+          <h2>Hanger</h2>
+          <ul>
+          </ul>
+        </div>
+      </div>
+      <!-- Flights Div -->
+      <div class="col" id="hangerDiv">
+        <div>
+          <h2>Hanger</h2>
+          <ul>
+          </ul>
+        </div>
+      </div>
+      <!-- Main click div -->
+      <div class="col-6" id="mainbox">
+        <p class="text-center" id="counter">0 $</p>
+        <a href="#" class="btn btn-green" id="clickbtn">Click</a>
+        <span class="text-right clickper sticky-top" id="counter"></span>
+      </div>
+      <div class="col-md-3" id="purchaseDiv">
+        <h2 id="compName">Stats</h2>
+        <ul>
+          <li class="list-item statslist" id="totalValue">Total Company Value: 0$</li>
+          <li class="list-item statslist" id="planesOwned">Planes Owned: 0</li>
+          <li class="list-item statslist" id="flyingPlanes">Planes Flying: 0</li>
+          <li class="list-item statslist" id="planesInRepair">Planes In Repair: 0</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Create Player -->
+  <div class="container" id="createcompanydiv">
+    <h2 class="text-center text-white">Create a new Company</h2>
+    <div class="form-group">
+      <label for="name" class="text-white" id="name">Name:</label>
+      <input type="text" class="form-control" id="cName" placeholder="Enter Name" name="name">
+    </div>
+    <div class="form-check">
+    </div>
+    <button type="submit" class="btn btn-dark createbtn">Submit</button>
+  </div>
+  <!-- scripts -->
+  <script src="./src/components/classes.js"></script>
+  <script src="./src/components/functions.js"></script>
+  <script src="./src/javascript.js"></script>
 </body>
+
+
 </html>
