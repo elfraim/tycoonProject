@@ -4,6 +4,7 @@
 <!-- Header -->
 
 <head>
+  <script src="./anime-master/anime.min.js"></script>
   <title>Tycoon</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,10 +17,11 @@
 
 
 <!-- body -->
+
 <body>
   <!-- Navigation bar -->
   <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
-    <a class="navbar-brand" href="#">AT</a>
+    <a class="navbar-brand" href="#" id="AT">ACT</a>
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="#" id="purchase">Purchase</a>
@@ -28,58 +30,97 @@
         <a class="nav-link" href="#" id="hanger">Hanger</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Flights</a>
+        <a class="nav-link" href="#" id="fuel">Fuel</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link" href="#" id="perks">Perks</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="staff">Staff</a>
+
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
     </ul>
   </nav>
   <!-- Main Side Container (menu) -->
   <div class="container" id="maincontainer">
     <div class="row">
-
-      <!-- Purchase Div -->
-      <div class="col" id="purchaseDiv">
-        <h2>Purchase</h2>
+      <!-- Main Purchase Div -->
+      <div class="col menuDiv" id="purchaseDiv">
+        <h2 class="h2title">Purchase</h2>
         <ul>
           <img src="./img/Boeing.png" id="boeingImg" />
-          <li class="list-item 787" id="planelist">Boeing 787-9</li>
-          <li class="list-item 747-8" id="planelist">Boeing 747-8</li>
-          <li class="list-item 777X" id="planelist">Boeing 777X</li>
-          <li class="list-item 767" id="planelist">Boeing 767</li>
-          <li class="list-item 737-900" id="planelist">Boeing 737-900</li>
+          <li class="list-item 787 hvr-grow-rotate" id="planelist">Boeing 787-9</li>
+          <li class="list-item 747 hvr-grow-rotate" id="planelist">Boeing 747-8</li>
+          <li class="list-item 777 hvr-grow-rotate" id="planelist">Boeing 777X</li>
+          <li class="list-item 767 hvr-grow-rotate" id="planelist">Boeing 767</li>
+          <li class="list-item 737 hvr-grow-rotate" id="planelist">Boeing 737-900</li>
         </ul>
       </div>
-      <!-- Hanger Div -- >
-      <div class="col" id="hangerDiv">
+      <!-- Hanger Div-->
+      <div class="col menuDiv" id="hangerDiv">
         <div>
-          <h2>Hanger</h2>
-          <ul>
+          <h2 class="h2title">Hanger</h2>
+          <ul class="text-center">
+            <li class="list-item hangerlist hvr-grow-rotate" id="hang787">Boeing 787-9: </li>
+            <li class="list-item hangerlist hvr-grow-rotate" id="hang747">Boeing 747-8: </li>
+            <li class="list-item hangerlist hvr-grow-rotate" id="hang777">Boeing 777X: </li>
+            <li class="list-item hangerlist hvr-grow-rotate" id="hang767">Boeing 767: </li>
+            <li class="list-item hangerlist hvr-grow-rotate" id="hang737">Boeing 737-9: </li>
           </ul>
         </div>
       </div>
-      <!-- Flights Div -->
-      <div class="col" id="hangerDiv">
-        <div>
-          <h2>Hanger</h2>
-          <ul>
-          </ul>
-        </div>
+      <!-- Fuel Div -->
+      <div class="col menuDiv" id="fuelDiv">
+        <h2 class="h2title">Fuel Station</h2>
+        <p>Current market price per Liter:</p>
+        <font size="15px" id="fuelPrice">0 $ </font>
+        <input type="text" id="fuelAmount"></input><br/>
+        <p class="h2title"> Total Price </p>
+        <p id="totalFuelValue">0$</p>
+        <br/>
+        <a href="#" class="btn btn-green" id="fuelBtn">Buy</a>
+      </div>
+      <!-- Main Perk Div -->
+      <div class="col menuDiv" id="perkDiv">
+        <h2 class="h2title">Perks</h2>
+        <ul>
+          <li class="list-item hvr-grow-rotate perk" id="incMouse">Increase Click Value +5$</li>
+          <a href="#" class="btn btn-green perkBtn" id="incClickValueBtn">100$</a>
+          <li class="list-item hvr-grow-rotate perk" id="incStorage">Increase Storage Capacity +1000L</li>
+          <a href="#" class="btn btn-green perkBtn" id="incStorageCapacityBtn">100000$</a>
+        </ul>
+      </div>
+      <!-- Main Staff Div -->
+      <div class="col menuDiv" id="staffDiv">
+        <h2 class="h2title">Staff</h2>
+        <ul>
+          <li class='list-item statslist incSize'>Pilots: 0</li>
+          <p class="discribe">Pilots operate and fly the aircrafts, Gain 10% more income Per Plane</p>
+          <li class="list-item statslist">Pursers: 0</li>
+          <li class="list-item statslist">Flight Attendants:0</li>
+          <li class="list-item statslist">Engineers:0</li>
+        </ul>
       </div>
       <!-- Main click div -->
       <div class="col-6" id="mainbox">
-        <p class="text-center" id="counter">0 $</p>
-        <a href="#" class="btn btn-green" id="clickbtn">Click</a>
-        <span class="text-right clickper sticky-top" id="counter"></span>
+        <div class="col-12" id="planeinfo"></div>
+        <div class="clickerbox">
+          <p class="text-center" id="counter">Cash: 0 $</p>
+          <a href="#" class="btn btn-green" id="clickbtn">Click</a>
+          <span class="text-center clickper" id="counter"></span>
+        </div>
       </div>
-      <div class="col-md-3" id="purchaseDiv">
-        <h2 id="compName">Stats</h2>
+      <div class="col-md-3 menuDiv" id="statsDiv">
+        <h2 id="compName" class="h2title">Stats</h2>
         <ul>
-          <li class="list-item statslist" id="totalValue">Total Company Value: 0$</li>
-          <li class="list-item statslist" id="planesOwned">Planes Owned: 0</li>
-          <li class="list-item statslist" id="flyingPlanes">Planes Flying: 0</li>
-          <li class="list-item statslist" id="planesInRepair">Planes In Repair: 0</li>
+          <li class="list-item statsListSmall" id="totalValue">Total Company Value: 0$</li><br/>
+          <li class="list-item statsListSmall" id="planesOwned">Planes Owned: 0</li><br/>
+          <li class="list-item statsListSmall" id="flyingPlanes">Planes Flying: 0</li><br/>
+          <li class="list-item statsListSmall" id="planesInRepair">Planes In Repair: 0</li><br/>
+          <li class="list-item statsListSmall" id="fuelInStorage">Fuel In Storage: 0L</li><br/>
+          <li class="list-item statsListSmall" id="storageCapacity">Storage Capacity: 1000L</li><br/>
         </ul>
       </div>
     </div>
@@ -99,6 +140,7 @@
   <script src="./src/components/classes.js"></script>
   <script src="./src/components/functions.js"></script>
   <script src="./src/javascript.js"></script>
+
 </body>
 
 

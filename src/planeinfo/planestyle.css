@@ -1,0 +1,36 @@
+#bo {
+  color: white;
+  font-size: 12px;
+}
+
+#text {
+  margin-top: 10px;
+}
+
+#bo h2 {
+  margin-top: 3px;
+  text-align: center;
+}
+
+#bo img {
+  margin-left: 25px;
+}
+
+#buybtn {
+  text-align: center;
+  margin-top: 5px;
+  width: 470px;
+}
+
+#pricetext {
+  margin-top: 8px;
+  color: gold;
+  padding-left: 190px;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#generates {
+  text-align: center;
+}
